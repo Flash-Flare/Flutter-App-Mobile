@@ -1,9 +1,12 @@
+import 'package:app_mobile/core/extensions/extensions.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../constants/shared_prefs_constants/shared_prefs_constants.dart';
 
+/// A class defined for save the data to shared preferences
 class AppSettingsPrefs {
   final SharedPreferences _sharedPreferences;
 
+  /// Clear the shared prefs
   clear() {
     _sharedPreferences.clear();
   }
@@ -12,15 +15,7 @@ class AppSettingsPrefs {
     this._sharedPreferences,
   );
 
-  String getLocale() {
-    return _sharedPreferences
-        .getString(
-          SharedPrefsConstants.locale,
-        )
-        //@todo: Here using the function pareWithDefaultLocale
-        .toString();
-  }
-
+  /// Setting up the app locale
   Future<void> setLocale({
     required String locale,
   }) async {
@@ -30,6 +25,16 @@ class AppSettingsPrefs {
     );
   }
 
+  /// Get the app locale
+  String getLocale() {
+    return _sharedPreferences
+        .getString(
+          SharedPrefsConstants.locale,
+        )
+        .pareWithDefaultLocale();
+  }
+
+  /// Set if the outBoarding viewed
   Future<void> setOutBoardingScreenViewed() async {
     await _sharedPreferences.setBool(
       SharedPrefsConstants.outBoardingViewed,
@@ -37,15 +42,16 @@ class AppSettingsPrefs {
     );
   }
 
+  /// Return true if outBoarding viewed
   bool getOutBoardingScreenViewed() {
-    return _sharedPreferences.getBool(
+    return _sharedPreferences
+        .getBool(
           SharedPrefsConstants.outBoardingViewed,
         )
-        //@todo: Adding on null
-        ??
-        true;
+        .onNull();
   }
 
+  /// Set if the user logged in is true
   Future<void> setUserLoggedIn() async {
     await _sharedPreferences.setBool(
       SharedPrefsConstants.isLoggedIn,
@@ -53,14 +59,16 @@ class AppSettingsPrefs {
     );
   }
 
+  /// Get if the user logged
   bool getUserLoggedIn() {
-    return _sharedPreferences.getBool(
+    return _sharedPreferences
+        .getBool(
           SharedPrefsConstants.isLoggedIn,
-        ) ??
-        true;
-    //@todo: Adding on Null
+        )
+        .onNull();
   }
 
+  /// Set the user token
   Future<void> setToken({
     required String token,
   }) async {
@@ -70,8 +78,8 @@ class AppSettingsPrefs {
     );
   }
 
+  /// Get the user token
   String getToken() {
-    return _sharedPreferences.getString(SharedPrefsConstants.token) ?? "true";
-    //@todo: Adding on Null
+    return _sharedPreferences.getString(SharedPrefsConstants.token).onNull();
   }
 }
