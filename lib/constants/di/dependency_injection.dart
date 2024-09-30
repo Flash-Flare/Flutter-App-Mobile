@@ -13,6 +13,7 @@ import '../../core/storage/local/app_settings_prefs.dart';
 
 final instance = GetIt.instance;
 
+/// Init the base module when open app
 initModule() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
@@ -33,7 +34,8 @@ initModule() async {
     instance.registerLazySingleton<AppSettingsPrefs>(
         () => AppSettingsPrefs(instance()));
   }
-  // ToDo: remove this code
+  // This is not important code
+  // @todo: remove this code
   // AppSettingsPrefs _app = instance<AppSettingsPrefs>();
   // var pref = await SharedPreferences.getInstance();
   // pref.clear();
