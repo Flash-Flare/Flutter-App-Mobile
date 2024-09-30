@@ -105,3 +105,14 @@ extension StringExtension on String {
     return this[0].toUpperCase() + substring(1);
   }
 }
+
+/// On Null Bool to handle the null safety for bool from env(UnKnownType)
+extension OnNullBool on String? {
+  bool onNullBool() {
+    if (this == null) {
+      return false;
+    } else {
+      return bool.parse(this!);
+    }
+  }
+}
