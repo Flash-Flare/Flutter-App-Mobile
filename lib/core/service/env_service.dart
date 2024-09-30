@@ -4,9 +4,14 @@ import '../../constants/env/env_constants.dart';
 
 /// Class defined for env service to fetch values
 class EnvService {
-  static getString({required String key}) async =>
-      dotenv.env[EnvConstants.debug].onNull();
+  static String getString({
+    required String key,
+  }) {
+    return dotenv.env[key].onNull();
+  }
 
-  static getBool({required String key}) async =>
-      dotenv.env[EnvConstants.debug].onNullBool();
+  static Future<bool> getBool({
+    required String key,
+  }) async =>
+      dotenv.env[key].onNullBool();
 }
