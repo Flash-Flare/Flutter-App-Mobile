@@ -3,7 +3,9 @@ class CacheData {
   static String email = "";
 
   /// Set the email to cache as a static
-  static void setEmail(String value) {
+  static void setEmail({
+    required String value,
+  }) {
     email = value;
   }
 
