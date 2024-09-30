@@ -2,33 +2,68 @@ import 'package:easy_localization/easy_localization.dart';
 
 /// A class defined for strings the app
 class ManagerStrings {
+  /// Config Strings
   static String get noRouteFound => tr('noRouteFound');
 
-  static String get SUCCESS => tr('SUCCESS');
+  static String get success => tr('success');
 
-  static String get NO_CONTENT => tr('NO_CONTENT');
+  static String get noContent => tr('noContent');
 
-  static String get BAD_REQUEST => tr('BAD_REQUEST');
+  static String get badRequest => tr('badRequest');
 
-  static String get FORBIDDEN => tr('FORBIDDEN');
+  static String get forbidden => tr('forbidden');
 
-  static String get UNAUTHORISED => tr('UNAUTHORISED');
+  static String get unAuthorized => tr('unAuthorized');
 
-  static String get NOT_FOUND => tr('NOT_FOUND');
+  static String get notFound => tr('notFound');
 
-  static String get INTERNAL_SERVER_ERROR => tr('INTERNAL_SERVER_ERROR');
+  static String get internalServerError => tr('internalServerError');
 
-  static String get CONNECT_TIMEOUT => tr('CONNECT_TIMEOUT');
+  static String get connectTimeOut => tr('connectTimeOut');
 
-  static String get CANCEL => tr('CANCEL');
+  static String get cancel => tr('cancel');
 
-  static String get RECIEVE_TIMEOUT => tr('RECIEVE_TIMEOUT');
+  static String get receiveTimeOut => tr('receiveTimeOut');
 
-  static String get SEND_TIMEOUT => tr('SEND_TIMEOUT');
+  static String get sendTimeOut => tr('sendTimeOut');
 
-  static String get CACHE_ERROR => tr('CACHE_ERROR');
+  static String get cacheError => tr('cacheError');
 
-  static String get NO_INTERNT_CONNECTION => tr('NO_INTERNT_CONNECTION');
+  static String get noInternetConnection => tr('noInternetConnection');
 
-  static String get UNKNOWN => tr('UNKNOWN');
+  static String get unKnown => tr('unKnown');
+
+  static String get sessionFinished => tr('sessionFinished');
+
+  static String get invalidEmptyEmail => tr('invalidEmptyEmail');
+
+  static String get invalidEmail => tr('invalidEmail');
+
+  static String get doYouWantToChangeIt => tr('doYouWantToChangeIt');
+
+  static String get invalidPasswordLength => tr('invalidEmptyPassword');
+
+  static String get invalidPasswordUpper => tr('invalidPasswordUpper');
+
+  static String get invalidPasswordLower => tr('invalidPasswordLower');
+
+  static String get invalidPasswordDigit => tr('invalidPasswordDigit');
+
+  static String get passwordNotMatch => tr('passwordNotMatch');
+
+  static String get invalidEmptyPhoneNumber => tr('invalidEmptyPhoneNumber');
+
+  static String get invalidEmptyCode => tr('invalidEmptyCode');
+
+  static String get invalidPhoneNumber => tr('invalidPhoneNumber');
+
+  static String get notVerifiedEmail => tr('notVerifiedEmail');
+
+  static String get invalidFullName => tr('invalidFullName');
+
+  static String get sorryFailed => tr('sorryFailed');
+
+  static String get invalidEmptyDateOfBirth => tr('invalidEmptyDateOfBirth');
+
+  static String get invalidEmptyFullName => tr('invalidEmptyFullName');
 }
