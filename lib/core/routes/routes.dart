@@ -1,3 +1,5 @@
+import 'package:app_mobile/features/login/domain/di/di.dart';
+import 'package:app_mobile/features/login/presentation/view/login_view.dart';
 import 'package:flutter/material.dart';
 import '../resources/manager_strings.dart';
 
@@ -10,9 +12,9 @@ class Routes {
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
-      //@Todo: Complete this
-      // case Routes.splash:
-      //   return MaterialPageRoute(builder: (_) => const SplashView());
+      case Routes.login:
+        initLogin();
+        return MaterialPageRoute(builder: (_) => const LoginView());
       default:
         return unDefinedRoute();
     }

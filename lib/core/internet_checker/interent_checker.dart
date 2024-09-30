@@ -1,4 +1,5 @@
-import 'package:app_mobile/core/service/env_service.dart';
+import 'package:app_mobile/core/extensions/extensions.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import '../../constants/env/env_constants.dart';
 
@@ -12,7 +13,7 @@ class NetworkInfoImp implements NetworkInfo {
   NetworkInfoImp(this._internetConnectionChecker);
 
   @override
-  Future<bool> get isConnected => EnvService.getBool(key: EnvConstants.debug)
+  Future<bool> get isConnected => dotenv.env[EnvConstants.debug].onNullBool()
       ? Future.value(true)
       : _internetConnectionChecker.hasConnection;
 }
